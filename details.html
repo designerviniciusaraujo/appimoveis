@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Good Vibes - Adega Delivery</title>
+    <link rel="shortcut icon" href="favico.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/swiper.css">
+    <link rel="stylesheet" href="all.css">
+
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F72XNQT98R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F72XNQT98R');
+</script>
+  <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500&display=swap');
+      
+      body{
+       font-family: 'Poppins', sans-serif !important;
+       margin: 0 auto !important;
+       padding: 10px 10px  !important; 
+       max-width: 600px;
+       font-family: 'Poppins', sans-serif; 
+       overflow: hidden;
+      }
+      button,a { font-size: 14px;} 
+      ul li{
+          list-style: none;
+      }
+      #launcher {
+            /* background-image: url(full.png); */
+            background:black;
+            width: 100%;
+            height: 100vh;
+            height: -webkit-fill-available;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;  
+            flex-wrap: wrap;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        button#CartToggle:before {
+            content: "";
+            background-image: url("vetor.png" );
+            width: 70px;
+            height: 110px;
+            display: block;
+            position: absolute;
+            right: -12px;
+            top: 0;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        header{
+            flex-wrap:wrap ;
+        }
+
+        #launcher input {
+            width: 70%;
+            margin: 5px 0;
+            position: relative;
+            top: 34%;
+            height: 40px;
+            border: 0;
+            border-radius: 30px;
+            padding: 0px 20px;
+            opacity: 0.9; 
+            font-weight:  300;
+        }
+        #launcher input:focus-visible {
+            border: 0;
+            box-shadow: inherit;
+            outline-color: #4ce29e;
+        }
+        :-webkit-input-placeholder { /* Edge */
+            color:#B0B0B0; 
+            font-family: 'Poppins', sans-serif;
+          font-size: 14px;
+
+            }
+
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color:#B0B0B0;
+          font-family: 'Poppins', sans-serif;
+          font-size: 14px;
+
+
+            }
+
+            ::placeholder {
+            color:#B0B0B0;
+          font-family: 'Poppins', sans-serif;
+          font-size: 14px;
+
+
+            }
+
+            #launcher button {
+              background: transparent;
+              border: 2px solid #46d995;
+              width: 200px;
+              color: #46d995;
+              border-radius: 30px;
+              height: 40px;
+              margin: 0 auto;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin: 10px auto;
+          }
+
+    
+
+      .show {
+        display: block !important;
+
+      }
+      
+      nav[view="false"] {
+        left: -100%;
+        transition: .3s;
+      }
+      nav[view="true"]  {
+        left: 0%;
+         transition: .3s;
+      }
+      #CartMenu[view="false"] {
+        left: -100%;
+        transition: .3s;
+
+          }
+      #CartMenu[view="true"] {
+         left: 0%;
+         transition: .3s;
+
+      }
+      span {
+        font-weight: 900;
+        color: #46d995;
+    }
+      nav,div#CartMenu{
+          background: #eee;
+          position: fixed;
+          z-index: 99;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          top: 0px;
+          overflow-y: auto;
+          height: -webkit-fill-available;
+          z-index: 990;
+      }
+      div#CartMenu{
+        height: 82vh !important;
+
+      }
+      nav ul li {
+      font-size: 25px;
+      font-family: sans-serif;
+      color: #8f8f8f;
+      margin: 25px;
+      }
+      p {
+        /* color: #c1c1c1; */
+          color: #737373;
+      }
+      main{
+          margin:10px auto 15px;
+      }
+      .product{
+          display: flex;
+          align-items: center;
+          position: relative;
+          transition: .3s;
+          border-bottom: 1px solid #e9e9e9; 
+           min-height: 115px;
+           justify-content: flex-start;
+           padding: 10px 0;
+           background: #f1f1f1;
+    border-radius: 20px;
+    margin: 10px auto;
+
+         
+      }
+      .product h4 {
+        color: #424242;
+      }
+      .product span {
+        color: #6c6c6c;
+      }
+      .product img {
+          width: auto !important;
+          height: 130px;
+      }
+      #products h3:after {
+        border-bottom: 2px solid #4ce29e;
+        display: block;
+        content: "";
+        position: relative;
+        top: 7px;
+        width: 54px;
+        }
+        .itens {
+          margin: 30px auto;
+    padding: 0 15px 0px 0;
+    border-radius: 20px;
+        }
+    
+      .product[view="false"]{
+          left: 0px;
+      }
+      .product[view="true"]{
+          left: -80px;
+      }
+      .product button {
+      background: #46d995;
+      height: 100%;
+      border: 0;
+      width: 100%;
+      color: white;
+      border-radius: 10px;
+      }
+    
+      #cart[itens="true"] span.cart_null {
+      display: none;
+      }
+      span.cart_null {
+      margin: 50% auto;
+      display: flex;
+      justify-content: center;
+      }
+      div#cart .itemProd{
+      padding: 20px 30px;
+      border-bottom: 1px solid #b3b3b3;
+      /* display: flex; */
+      align-items: center;
+      }
+      div#cart .nameProd {
+      margin-right: 15px;
+      width: 60%;
+      }
+      span#qtd {
+          background: #46d995;
+          display: block;
+          width: 20px;
+          position: absolute;
+          right: 0;
+          height: 20px;
+          top: 3px;
+          border-radius: 20px;
+          color: white;
+          font-weight: 400;
+          padding: 1px;
+          display: flex;
+          justify-content: center;
+          font-size: 11px;
+          align-items: center;
+      }
+      .msg {
+            position: absolute;
+            margin: 220px 0 0;
+            left: 27%;
+        }
+  @media (min-width:580px)  {
+
+          .search{
+              position: relative !important;
+              order: 2;
+
+          }   
+
+          .cart{
+              order: 2;
+          }
+          main {
+            margin: 0 auto 15px;
+        }
+      }
+
+      @media (max-height:410px)   {
+    .logo h1{
+        display: none;
+      }
+
+      }
+      @media (max-height:570px)   {
+      .delivery, .logo p{
+        display: none;
+      }
+
+      }
+      .itemProd {margin: 0;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 22px;
+    }
+    .nameProd {
+    font-weight:400;
+    }
+    span {
+    font-weight: 900;
+    color: #46d995;
+    }
+
+    /* swipr */
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after  {
+    content: 'next';
+    width: 2px !important;
+    font-size: 20px !important;
+    color: #f90;
+    }
+    .swiper-button-prev, .swiper-rtl .swiper-button-next {
+    display: none;
+    }
+    .swiper-slide {
+    display: flex;
+    justify-content: center;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 157px;
+    left: 0;
+    width: 100%;
+}
+:root {
+    --swiper-theme-color: #4ce29e;
+}
+body[status="naologado"] #slider {
+    display: none;
+}
+body[status="logado"] #slider {
+    display: inherit;
+}
+
+header{
+  display: flex;align-items: center;margin: 0;
+
+}
+header button {
+  background:transparent;border:0;
+}
+label {
+  position: relative;  
+}
+ul#searchResult[view="show"] {
+    height: auto  ;
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+  </style>
+<body status="naologado"> 
+    <header>
+        <div>
+         <!-- MENU PRINCIPAL -->  
+            <button onclick="toggle('CartMenu')">
+              <img style="width: 35px;box-shadow: 7px 8px 17px #dbdbdb;border-radius: 12px;" src="menu.png" alt="">
+            </button> 
+
+            <nav id="nav" view="false">
+                <button style="float:right;margin:10px;cursor:pointer;background:transparent;border:0;" onclick="toggle('CartMenu')">x</button>
+                <ul>
+                    <li>Cervejas</li>
+                    <li>Whisky</li>
+                    <li>Fardos</li>
+                    <li>Vinhos</li>
+                    <li>Gin</li>
+                    <li>Destilados</li>
+                </ul>
+            </nav>
+        <!-- MENU PRINCIPAL --> 
+
+            <span style="position: relative;left: 29%; text-transform: uppercase;font-weight: 200;">   </span>    
+            
+        </div>
+        <!-- BOAS VINDAS -->
+        <div id="welcome" hidden>
+       
+      
+       
+      
+    </header>
+    
+    </div> 
+
+
+    <main > 
+      
+      <div id="slider">
+
+        <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+            <div class="swiper-wrapper" id="swiper-wrapper-437910353b76b2ec8" aria-live="polite">
+                <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 9" style="width: 377px;">
+                  <img src="blacklabel.png" alt=""> 
+                </div>
+                <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 9" style="width: 377px;">
+                  <img src="gin.png" alt="">  
+                </div> 
+            </div>
+            <div class="swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal" hidden><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">9</span></div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>  
+        </div>
+
+      <div class="itens" style="overflow-y: hidden;position: relative;overflow-x: hidden;">
+         
+        <p style="margin: 5px auto 40px;">Faça seu pedido! </p>
+        
+       </div> 
+
+    </main>
+
+    <footer style="display: flex;justify-content: center;opacity: 0.6;text-transform: uppercase;align-items: center;padding: 7px;flex-direction: column;">
+      Good Vibes - Adega Delivery
+        <span><h6>Desenvolvido por : Digital Harmony</h6></span>
+    </footer>
+</body>
+<script src="assets/swiper.js"></script>
+<script>
+    var swiper = new Swiper(".containerMySwiper", {
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+        el: ".swiper-pagination", 
+      },
+   
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+<script src="all.js"></script>
+<script src="products.js"></script>
+<script src="teste.js"></script>
+
+<script>
+
+  search = ()=> {
+    
+    let  id = document.getElementById('search')  
+    let  serchInput = document.getElementById('serchInput')   
+    let  searchResult = document.getElementById('searchResult')   
+     
+    searchResult.innerHTML=""
+    
+
+    submitSearch=(event)=>{
+      let searched=event.target.value  
+      const productFound=ProductsFilter(searched)  
+     
+      productFound.length > 0 ? render(productFound) :  searchResult.innerHTML="Produto não encontrado"
+
+      if( searched.length=='' ){
+        searchResult.innerHTML=""
+        searchResult.setAttribute("view","hide")
+        body.style.cssText="overflow: auto";
+
+
+        
+      }else{
+       ProductsFilter(searched)  
+      }
+    }
+
+    ProductsFilter=(searched)=>{
+        return listProd.filter(p=>{
+           return p.name.toLowerCase().includes(searched.toLowerCase())  
+        })  
+      }
+    serchInput.addEventListener('keyup', _.debounce(submitSearch, 500))
+ 
+
+    totalProducts=(listProd)=>{ 
+      console.log(listProd.length)
+    }
+    totalProducts(listProd)
+
+    function render(productFound){   
+      body.style.cssText="overflow: hidden";
+      serchInput.style.cssText+="display:block;"
+      searchResult.setAttribute("view","show")
+      productFound.map((pr)=>{  
+            searchResult.innerHTML+=`
+                   <div class="product" id=`+pr.id+` onclick="toggle('`+pr.id+`')" view="false">   
+                    <div style="padding: 10px 10px;order: 2;width: 27%;">
+                            <h4 style="font-weight: 400;text-transform: uppercase;margin: 0;">`+pr.name+`</h4>
+                         
+                            <span  style="font-weight: 400;">`+pr.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</span> 
+
+                        </div>  
+                        <button  style="order: 2;width: 20px;height: 20px;display: flex;justify-content: center;align-items: center;background: black;margin: 0 0px 0 43px;" class="">+</button> 
+
+                        <div style="margin: 0 25px; position: relative;order: 1;width: 23%;display: flex;justify-content: center;">   
+                            <img style="width: 120px;margin-left: 5px;" src="produtos/`+pr.img+`" alt="">
+                        </div>
+
+                        <div style="position: absolute;right: -106px;width: 96px;height: 100%;">  
+                            <button key=`+pr.id+` onclick="addProd(this)" class="cartBtn">Comprar</button> 
+                        </div>  
+                </div> 
+            </div>   
+            `;    
+        }) 
+   }
+   
+
+
+
+   
+
+  }
+  search()
+</script>
+<script> 
+   
+ var body=document.getElementsByTagName("body")[0]
+ 
+ initApp = () => { 
+
+    var launcherID = document.getElementById('launcher')
+    
+    var input ="<input id=inputName type='text' placeholder='Digite seu nome aqui' required >"
+    var button ="<button  onclick=getData()  type='button' placeholder='Digite seu nome aqui' required >Iniciar</button>" 
+    // launcherID.innerHTML=input+button
+
+    getData = () => {
+
+          userName=document.getElementById('inputName').value
+        userEnd=document.getElementById('inputEnd').value
+
+        body.style.cssText+="overflow-y: auto;"
+
+        if(userName.length>=2 & userEnd.length>=2){
+            Products(userName,userEnd) 
+            
+            setTimeout( 
+                launcherID.style.cssText="display:none;"
+            , 1000);
+        }else{
+            alert('Para começar preencha os campos')
+        }
+    }
+  
+}
+ initApp()
+
+Products = (userName,userEnd) => { 
+   
+
+  var container=document.getElementById('products')
+  var welcome=document.getElementById('welcome')
+
+  welcome.style.cssText=`
+      margin:10px 0;  
+      display: flex; 
+      align-items: center; 
+      padding: 0px 35px;
+      
+  `;
+    
+
+  console.log(welcome)
+    welcome.innerHTML+="<div><p style='  margin: 0px auto 5px;  font-size: 15px;  color: #8C9099;  padding: 0 5px; display: block;   margin-left: auto;  margin-right: auto; line-height: 1.2;'> Olá, <strong style='font-weight: 700;color: #4BE8A0; letter-spacing: 1px;'>"+userName+"</strong> faça seu pedido.</p><p style='font-size: 12px;margin: 0 5px; line-height: 1.2; white-space: nowrap;'> <i class='fa-solid fa-location-dot' style=' margin: 0 4px 0 0;'></i>"+userEnd+"</p><div>" 
+    
+ 
+    body.setAttribute("status", "logado")
+
+  allProds.map((el)=>{ 
+      var ii=el.itens 
+
+      
+      container.innerHTML+=`<h3 style="margin: 35px auto;">`+el.categoria+`</h3>`;
+    
+      for (var b = 0; b < ii.length; b++) { 
+        var itemProdId=ii[b].id
+        var itemProdName=ii[b].name
+        var itemProdDescription=ii[b].description
+        var itemProdPrice=ii[b].price
+        var itemProdImg=ii[b].img
+ 
+        container.innerHTML+=`  
+            <div class="product" id=`+itemProdId+` onclick="toggle('`+itemProdId+`')" view="false">   
+                    <div style="padding: 10px 10px;order: 2;width: 27%;">
+                            <h4 style="font-weight: 400;text-transform: uppercase;margin: 0;">`+itemProdName+`</h4>
+                            <p>`+itemProdDescription+`</p>
+                            <span  style="font-weight: 400;">`+itemProdPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</span> 
+                        </div>  
+                        <button  style="order: 2;width: 20px;height: 20px;display: flex;justify-content: center;align-items: center;background: black;margin: 0 0px 0 43px;" class="">+</button> 
+
+                        <div style="margin: 0 25px; position: relative;order: 1;width: 23%;display: flex;justify-content: center;">   
+                            <img style="width: 120px;margin-left: 5px;" src="`+itemProdImg+`" alt="">
+                        </div>
+
+                        <div style="position: absolute;right: -106px;width: 96px;height: 100%;">  
+                            <button key=`+itemProdId+` onclick="addProd(this)" class="cartBtn">Comprar</button> 
+                        </div>  
+                </div> 
+            </div>   
+        `;
+        }
+    }) 
+
+ 
+    addProd=(prodThis)=>{
+
+      let key=prodThis.getAttribute('key')
+      listProd[key].quantidade++ 
+      Cart(true) 
+
+      
+    }
+
+    }
+    
+Cart = (status) =>{ 
+  containerCart=document.getElementById('CartMenu')  
+  itensCesta=document.getElementById('qtd')  
+  containerCart.innerHTML=` <button style="   background:transparent; z-index: 999;left: 5px;margin: 20px;border:0" onclick="toggle('CartMenu')"> <i class="fa-solid fa-chevron-left"></i></button>`;
+  var nitens=0
+  var total=0
+
+  listProd.map((el)=>{  
+    if(el.quantidade > 0){ 
+
+     nitens2=nitens+=el.quantidade
+     total2=total+=el.price*el.quantidade 
+
+     quantProd=el.price*el.quantidade //Calcula a soma do mesmo item
+     itensCesta.innerHTML=nitens2 //Mostra quantidad
+       
+        n=el.name  
+        containerCart.innerHTML+=`  
+            <div class="itemProd">
+                <div class="nameProd">`+el.quantidade+` `+el.name+` </div> 
+                <p>`+el.description+`</p>
+                <span>`+quantProd.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</span>
+                <button  key=`+el.id+` style="float:right;position: absolute;right: 20px;" onclick="removeProd(this)">  Remover </button>
+            </div>  
+            
+        `;  
+    } else{
+       console.log(el.quantidade )
+      }  
+   
+  })
+
+  if(status==true){ 
+        alert('Produto adicionado ')
+  }else{
+      alert('Produto removido  ') 
+  } 
+    totalReal=total2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) 
+    containerCart.innerHTML+=`<div style="   box-shadow: 0px -7px 12px #d9d9d9;position: fixed; bottom: 0; background: #ffffff; width: 100%; "><div style=" display: flex; justify-content: center; margin: 15px auto 0; color: #686868; ">Total da Compra: `+total2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</div ><button onclick="enviarPedido()" style="float: inherit;margin: 20px auto;border: 1px solid #46d995;bottom: 25px;width: 230px;height: 45px;background: #46d995;color: white;border-radius: 40px;display: flex;text-transform: uppercase;font-weight: 700;letter-spacing: 1px;align-items: center;justify-content: center;text-decoration: none;" onclick="removeProd(this)"><i style="margin-right: 5px;"  class="fa-brands fa-whatsapp"></i>        Enviar Pedido </button> </div>  `
+    
+}
+
+enviarPedido=()=>{  
+    var cesta=document.querySelectorAll("div#CartMenu .itemProd")
+    
+    for (let index = 0; index < cesta.length; index++) {
+        const element = cesta[index];
+        name+=element.childNodes[1].innerHTML      
+
+        msg="("+name+")  " 
+    }
+    console.log(  msg  )
+    url="https://wa.me/+5512996048083?text=Olá meu nome é "+userName+", endereço ("+userEnd+"), Pedido: "+msg+"Total à pagar:"+totalReal;
+    location.href = url
+
+}
+
+removeProd=(prod)=>{
+ 
+    let key=prod.getAttribute('key')
+    listProd[key].quantidade--
+    Cart(false)
+ }
+
+toggle=(id)=>{ 
+
+  var thisID=document.getElementById(id) 
+  var body = document.getElementsByTagName("body")[0]
+ 
+
+    if(thisID.getAttribute("view")=="false") {
+       
+      if(thisID.getAttribute("id")=="CartMenu"){
+        
+      }
+     
+      thisID.setAttribute("view", "true") 
+    } else { 
+       
+        thisID.setAttribute("view", "false") 
+    }  
+}
+
+ 
+</script>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+        spaceBetween:10,
+        loop: true,
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+  });
+</script>
+</html>
