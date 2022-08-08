@@ -25,15 +25,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500&display=swap');
       
       body{
-       font-family: 'Poppins', sans-serif !important;
-       margin: 0 auto !important;
-       padding: 10px 10px  !important; 
-     
-  
-       font-family: 'Poppins', sans-serif; 
-       overflow: hidden;
+        font-family: 'Poppins', sans-serif !important;
+        margin: 0 auto !important;
+        padding: 15px  !important; 
+
+        background-image: url('elipse.png');
+        font-family: 'Poppins', sans-serif; 
+        overflow: hidden;
+
+        background-repeat: no-repeat;
+        background-size: 47%;
+        background-position: right top;
       }
-      button,a { font-size: 14px;} 
+      button,a { font-size: 13px;} 
+      .button-get {
+          width: 200px;
+          border-radius: 30px;
+          height: 40px;
+          border: 0;
+          margin: 30px auto;
+          display: block;
+          font-weight: 700 !important;
+      }
       ul li{
           list-style: none;
       }
@@ -69,20 +82,25 @@
         header{
             flex-wrap:wrap ;
         }
-
+        input {  
+          font-size: 12px;
+          color:#B0B0B0;
+          font-weight: 400;
+        }
         #launcher input {
             width: 100%;
             margin: 5px 0;
             position: relative;
             top: 34%;
-            height:35px;
+            height:45px;
             border: 0;
             border-radius: 30px;
-            padding: 0px 30px;
+            padding: 1px 30px;
             opacity: 0.9; 
             font-weight:  300;
+          
         }
-        #launcher input:focus-visible {
+           input:focus-visible {
             border: 0;
             box-shadow: inherit;
             outline-color:#6967e1;
@@ -90,9 +108,11 @@
              
         }
         :-webkit-input-placeholder { /* Edge */
-            color:#B0B0B0; 
+            
             font-family: 'Poppins', sans-serif;
           font-size: 12px;
+          color:#B0B0B0; 
+
           padding: 0 20px;
           position: relative;
             left: 80px;
@@ -100,24 +120,19 @@
 
             }
 
-            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+          :-ms-input-placeholder { /* Internet Explorer 10-11 */
             color:#B0B0B0;
-          font-family: 'Poppins', sans-serif;
-          font-size: 14px;
-          padding: 0 20px;
-          position: relative;
-            left: 80px;
-
-
-
-            }
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            padding: 0 20px;
+            position: relative;
+            left: 80px;   
+          }
 
             ::placeholder {
             color:#B0B0B0;
-          font-family: 'Poppins', sans-serif;
-          font-size: 14px;
-
-
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px; 
             }
 
             #launcher button {  
@@ -149,13 +164,19 @@
          transition: .3s;
       }
       #CartMenu[view="false"] {
-        left: -100%;
+        left: auto;
         transition: .3s;
+    
+        top: inherit;
+        bottom: -100%
 
           }
       #CartMenu[view="true"] {
          left: 0%;
          transition: .3s;
+         top: inherit; 
+         bottom: 0%;
+
 
       }
       span {
@@ -189,7 +210,7 @@
           color: #737373;
       }
       main{
-          margin:115px auto 15px;
+          margin:15px auto 15px;
       }
       .product{
           display: flex;
@@ -197,7 +218,7 @@
           position: relative;
           transition: .3s;
           border-bottom: 1px solid #e9e9e9; 
-           min-height: 115px;
+          height: 100px;
            justify-content: flex-start;
            padding: 10px 0;
            background: #f1f1f1;
@@ -214,10 +235,10 @@
       }
       .product img {
           width: auto !important;
-          height: 130px;
+          height: 100px;
       }
       #products h3:after {
-        border-bottom: 2px solid #4ce29e;
+        border-bottom: 2px solid #4340e9 ;
         display: block;
         content: "";
         position: relative;
@@ -237,7 +258,7 @@
           left: -80px;
       }
       .product button {
-      background: #46d995;
+     
       height: 100%;
       border: 0;
       width: 100%;
@@ -285,6 +306,53 @@
             margin: 220px 0 0;
             left: 27%;
         }
+        html,
+ body {
+   position: relative;
+   height: 100%;
+   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   color: #000;
+   margin: 0;
+   padding: 0;
+ }
+
+
+ .swiper {
+   width: 100%;
+   height: 100%;
+ }
+
+ .swiper-slide {
+   text-align: center;
+   font-size: 18px;
+   background: #fff;
+
+   /* Center slide text vertically */
+   display: -webkit-box; 
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   -webkit-align-items: center;
+   align-items: center;
+ }
+  
+ .swiper-slide img {
+   display: block;
+   width: 100%  !important;
+   height: 100%  !important;
+   object-fit: cover;
+ }
+
+ div#slider .swiper-slide {
+   width: 80% !important; 
+ }
   @media (min-width:580px)  {
 
           .search{
@@ -354,9 +422,16 @@ body[status="logado"] #slider {
     display: inherit;
 }
 
+ 
 header{
-  display: flex;align-items: center;margin: 0;
-
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    justify-content: space-between;
+}
+header .welcome{
+  font-size: 0.9rem;
+  text-align: center;
 }
 header button {
   background:transparent;border:0;
@@ -369,150 +444,63 @@ ul#searchResult[view="show"] {
     max-height: 350px;
     overflow-y: auto;
     overflow-x: hidden;
+} 
+.product p {
+    height: 40px;
+    overflow: hidden;
+    width: 110px;
+    font-size: 11px;
+    line-height: 1.2;
+    margin: 2px auto;
 }
   </style>
 <body status="naologado"> 
-    <header>
-        <div>
-         <!-- MENU PRINCIPAL -->  
-            <button onclick="toggle('CartMenu')">
-              <img style="width: 35px;box-shadow: 7px 8px 17px #dbdbdb;border-radius: 12px;" src="menu.png" alt="">
-            </button> 
-
-            <nav id="nav" view="false">
-                <button style="float:right;margin:10px;cursor:pointer;background:transparent;border:0;" onclick="toggle('CartMenu')">x</button>
-                <ul>
-                    <li>Cervejas</li>
-                    <li>Whisky</li>
-                    <li>Fardos</li>
-                    <li>Vinhos</li>
-                    <li>Gin</li>
-                    <li>Destilados</li>
-                </ul>
-            </nav>
-        <!-- MENU PRINCIPAL --> 
-
-            <span style="position: relative;left: 29%; text-transform: uppercase;font-weight: 200;">   </span>    
-            
-        </div>
-        <!-- BOAS VINDAS -->
-        <div id="welcome">
-       
-        <!-- CARRINHO -->  
-        <div id="Cart"  class="cart">
-            <button id="CartToggle" style="background:transparent;border:0;z-index: 999;right: 5px;position: fixed;top: 0;padding: 16px;right: 0;" onclick="toggle('CartMenu')">
-                <!-- <i      style=" color: white;font-size: 15px;" class="fa-solid fa-cart-arrow-down"></i> -->
-                
-                <img style="
-                width: 20px;
-            " src="cart.png" alt="">
-            <span id="qtd" >0</span>
-            </button> 
-            <div id="CartMenu" view="false"> 
-                <button  style="background:transparent;z-index: 999;border: 1px solid #5a5a5a;left:5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;" onclick="toggle('CartMenu')">
-                    x
-                </button>  
-                <div class="msg">
-                Nenhum produto na Cesta 
-               </div>   
-            </div> 
-        </div>
-       
-      
+    <header>  
+        <img style="width: 35px;border-radius: 12px;" src="logo.png" alt=""> 
+        <div class="welcome" id="welcome"></div>  
+        <button onclick="toggle('CartMenu')">
+         <img style="width: 35px;border-radius: 12px;" src="menu.png" alt="" />
+        </button>   
+        <div id="CartMenu" view="false"> 
+          <button  style="background:transparent;z-index: 999;border: 1px solid #5a5a5a;left:5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;" onclick="toggle('CartMenu',this)">
+              x
+          </button>  
+          <div class="msg">
+          Nenhum produto na Cesta 
+         </div>   
+      </div> 
     </header>
-    <div class="search" style="position: relative;top: 10px;width: 80%;left: 0;margin: 15px 7%;"  >
-       
-     <h6 style="
-     font-size: 26px;
-     width: 180px;
-     line-height: 1.1;
-     margin: 25px 0;
- ">O que deseja pedir hoje?</h6>  
- <label style=" width: 100%; display: flex; align-items: center; "> 
-  <input id="serchInput" style="width: 100%;margin: 0px;border: 0px solid #bfbdbd;padding:15px 0px 15px 35px;border-radius: 25px;background: #F5F5F5;" type="text" placeholder="Buscar itens..">
-      <i style="position: absolute;left: 15px;top: 15px;opacity: 0.3;cursor: pointer;" class="fa-solid fa-magnifying-glass"></i>
-  </label>
+
+      <div class="search" style="position: relative;top: 10px;width: 80%;left: 0;margin:15px 5%;"  >
+        
+          <h6 style=" font-size: 26px;   line-height: 1.1; margin: 25px 0; color: #626A89; "><strong class="primary-color">Encontre </strong></br> o
+            Empreendimento ideal pra você.
+          </h6>  
+          <label style=" width: 100%; display: flex; align-items: center; "> 
+            <input id="serchInput" style="width: 100%;margin: 0px;border: 1px solid #dddddd;padding:15px 0px 15px 35px;border-radius: 25px;background: #F5F5F5;" type="text" placeholder="Buscar itens..">
+            <i style="position: absolute;left: 15px;top: 15px;opacity: 0.3;cursor: pointer;" class="fa-solid fa-magnifying-glass"></i>
+            <i style="position: absolute;right: 15px;top: 15px;opacity: 0.3;cursor: pointer;" class="fa-solid fa-magnifying-glass primary-color"></i>
+          </label>
           <ul id="searchResult"  style= "background: white;width: 100%;left: 0;position: fixed;z-index: 99;top: 219px;padding: 0px;" >
           </ul> 
-      </div>
-    </div> 
+
+      </div> 
+ 
 
 
     <main > 
-      <div id="launcher">
-
+      <div id="launcher">  
         <div class="logo" style="    width: 100%;  position: absolute;   z-index: 99;      display: flex; flex-direction: column;  top: 30px;padding: 0 30px;">
-          <img src="icon.png" alt="" style="width: 30px;display: block;margin: 0 32px;position: relative;right: 33px;">
-          
-          <h1 style="color: white;font-weight: 700;font-size: 24px;line-height: 1.2;margin-top: 140px;">Ubatuba, Encontre o</br>
+          <img src="logo.png" alt="" style="width: 40px;display: block;margin: 0 32px;position: relative;right: 33px;">
+          <h1 style="color: white;font-weight: 400;font-size: 24px;line-height: 1.2;margin-top: 140px;">Encontre o</br>
             Empreendimento ideal </br>
-          <strong style="font-weight: 700;color: #4340e9;text-transform: capitalize;">Para você.</strong></h1>
-        </div>
-
-        <style>
-               html,
-      body {
-        position: relative;
-        height: 100%;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
-        margin: 0;
-        padding: 0;
-      }
-
-  
-      .swiper {
-        width: 100%;
-        height: 100%;
-      }
-
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-
-        /* Center slide text vertically */
-        display: -webkit-box; 
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
-       
-      .swiper-slide img {
-        display: block;
-        width: 100%  !important;
-        height: 100%  !important;
-        object-fit: cover;
-      }
-    
-      div#slider .swiper-slide {
-        width: 80% !important; 
-      }
-
-    
-        </style>
-       
-        
-       
+          <strong style="font-weight: 400;color: #4340e9;text-transform: capitalize;">Para você.</strong></h1>
+        </div> 
          <div class="swiper containerMySwiper"  >
-            <div class="swiper-wrapper">
-              
-             
-              
+            <div class="swiper-wrapper">  
               <div class="swiper-slide">
                 <img  style="width: 226;"  src="laucher.png" alt="" >
-              </div>
-           
-
+              </div>  
             </div>
             <div class="swiper-pagination"></div>
          </div>
@@ -539,51 +527,31 @@ ul#searchResult[view="show"] {
           justify-content: center;
       ">
             <input id="inputName" type="text" placeholder="Digite seu nome"> 
-            <i style="    font-size: 12px; position: absolute;left: 0px;margin: 15px;opacity: .3;" class='fa-solid fa-location-dot' ></i>
+            <i style="    font-size: 12px; position: absolute;left: 0px;margin:21px 17px;opacity: .3;" class='fa-solid fa-user' ></i>
+            <i style="    font-size: 12px; position: absolute;right:  0px;margin:21px 17px;opacity: .3;" class='fa-solid fa-arrow-right-long' ></i>
+ 
           </label>
           <button class="primary-color bg-primary-color" onclick=getData()>Iniciar</button>
         </div>  
          
         </div>
       </div>
-         
-      <div id="slider">
+      
 
-        <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-            <div class="swiper-wrapper" id="swiper-wrapper-437910353b76b2ec8" aria-live="polite">
-                <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 9" style="width: 377px;">
-                  <img src="blacklabel.png" alt=""> 
-                </div>
-                <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 9" style="width: 377px;">
-                  <img src="gin.png" alt="">  
-                </div> 
-            </div>
-            <div class="swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal" hidden><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">9</span></div>
-            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>  
-        </div>
-
+      
       <div class="itens" style="overflow-y: hidden;position: relative;overflow-x: hidden;">
-        <h4 class="title"style="
-        display: block;
-        margin-bottom: 5px;
-        width: 211px;
-        font-size: 22px;
-        line-height: 1.3;
-    ">
-          <strong style="
-          color: #46d995;
-      ">A Maneira mais</strong> rápida de comprar bebidas online.
-        </h4>    
-        <p style="margin: 5px auto 40px;">Faça seu pedido! </p>
+        
         <div id="products"></div> 
        </div> 
+
+ 
 
     </main>
 
     <footer style="display: flex;justify-content: center;opacity: 0.6;text-transform: uppercase;align-items: center;padding: 7px;flex-direction: column;">
-      Good Vibes - Adega Delivery
-        <span><h6>Desenvolvido por : Digital Harmony</h6></span>
+      Empreendimentos  em Ubatuba <span><h6>Desenvolvido por : Digital Harmony</h6></span>
     </footer>
+
 </body>
 <script src="assets/js/swiper.js"></script>
 <script>
@@ -660,14 +628,14 @@ ul#searchResult[view="show"] {
                             <span  style="font-weight: 400;">`+pr.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</span> 
 
                         </div>  
-                        <button  style="order: 2;width: 20px;height: 20px;display: flex;justify-content: center;align-items: center;background: black;margin: 0 0px 0 43px;" class="">+</button> 
+                        <button class="bg-primary-color"  style="order: 2;width: 20px;height: 20px;display: flex;justify-content: center;align-items: center;margin: 0 0px 0 43px;"  >+</button> 
 
                         <div style="margin: 0 25px; position: relative;order: 1;width: 23%;display: flex;justify-content: center;">   
                             <img style="width: 120px;margin-left: 5px;" src="produtos/`+pr.img+`" alt="">
                         </div>
 
                         <div style="position: absolute;right: -106px;width: 96px;height: 100%;">  
-                            <button key=`+pr.id+` onclick="addProd(this)" class="cartBtn">Comprar</button> 
+                            <button class="bg-primary-color" key=`+pr.id+` onclick="addProd(this)" class="cartBtn bg-primary-color">Detalhes</button> 
                         </div>  
                 </div> 
             </div>   
@@ -721,19 +689,10 @@ Products = (userName,userEnd) => {
   var container=document.getElementById('products')
   var welcome=document.getElementById('welcome')
 
-  welcome.style.cssText=`
-      margin:10px 0;  
-      display: flex; 
-      align-items: center; 
-      padding: 0px 35px;
-      
-  `;
     
-
-  console.log(welcome)
-    welcome.innerHTML+="<div><p style='  margin: 0px auto 5px;  font-size: 15px;  color: #8C9099;  padding: 0 5px; display: block;   margin-left: auto;  margin-right: auto; line-height: 1.2;'> Olá, <strong style='font-weight: 700;color: #4BE8A0; letter-spacing: 1px;'>"+userName+"</strong> faça seu pedido.</p><p style='font-size: 12px;margin: 0 5px; line-height: 1.2; white-space: nowrap;'> <i class='fa-solid fa-location-dot' style=' margin: 0 4px 0 0;'></i>"+userEnd+"</p><div>" 
-    
+   
  
+    welcome.innerHTML+="<div><p> Olá, <strong>"+userName+"</strong>  seja bem vindo.</p><div>"  
     body.setAttribute("status", "logado")
 
   allProds.map((el)=>{ 
@@ -756,14 +715,14 @@ Products = (userName,userEnd) => {
                             <p>`+itemProdDescription+`</p>
                             <span  style="font-weight: 400;">`+itemProdPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</span> 
                         </div>  
-                        <button  style="order: 2;width: 20px;height: 20px;display: flex;justify-content: center;align-items: center;background: black;margin: 0 0px 0 43px;" class="">+</button> 
+                        <button class="bg-primary-color" style="order: 2;width: 20px;height: 20px;display: flex;justify-content: center;align-items: center;margin: 0 0px 0 43px;"  >+</button> 
 
                         <div style="margin: 0 25px; position: relative;order: 1;width: 23%;display: flex;justify-content: center;">   
                             <img style="width: 120px;margin-left: 5px;" src="`+itemProdImg+`" alt="">
                         </div>
 
                         <div style="position: absolute;right: -106px;width: 96px;height: 100%;">  
-                            <button key=`+itemProdId+` onclick="addProd(this)" class="cartBtn">Comprar</button> 
+                            <button class="bg-primary-color" key=`+itemProdId+` onclick="addProd(this)" class="cartBtn">Detalhes </button> 
                         </div>  
                 </div> 
             </div>   
@@ -773,82 +732,62 @@ Products = (userName,userEnd) => {
 
  
     addProd=(prodThis)=>{
+      
+      console.log(prodThis.getAttribute('key'))
 
       let key=prodThis.getAttribute('key')
       listProd[key].quantidade++ 
-      Cart(true) 
+      Cart(key)
 
       
     }
 
     }
     
-Cart = (status) =>{ 
+Cart = (key) =>{ 
   containerCart=document.getElementById('CartMenu')  
-  itensCesta=document.getElementById('qtd')  
-  containerCart.innerHTML=` <button style="   background:transparent; z-index: 999;left: 5px;margin: 20px;border:0" onclick="toggle('CartMenu')"> <i class="fa-solid fa-chevron-left"></i></button>`;
-  var nitens=0
-  var total=0
+  
+  // containerCart.innerHTML=` <button style="   background:transparent; z-index: 999;left: 5px;margin: 20px;border:0" onclick="toggle('CartMenu')"> <i class="fa-solid fa-chevron-left"></i></button>`;
+   
 
-  listProd.map((el)=>{  
-    if(el.quantidade > 0){ 
-
-     nitens2=nitens+=el.quantidade
-     total2=total+=el.price*el.quantidade 
-
-     quantProd=el.price*el.quantidade //Calcula a soma do mesmo item
-     itensCesta.innerHTML=nitens2 //Mostra quantidad
-       
-        n=el.name  
-        containerCart.innerHTML+=`  
+  listProd.map((els)=>{  
+    
+    if(els.id ==key ){
+      
+      containerCart.innerHTML+=`  
             <div class="itemProd">
-                <div class="nameProd">`+el.quantidade+` `+el.name+` </div> 
-                <p>`+el.description+`</p>
-                <span>`+quantProd.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</span>
-                <button  key=`+el.id+` style="float:right;position: absolute;right: 20px;" onclick="removeProd(this)">  Remover </button>
+                <div class="nameProd"> `+els.name+` </div> 
+                <p>`+els.description+`</p>
+             
             </div>  
             
         `;  
-    } else{
-       console.log(el.quantidade )
-      }  
+        toggle('CartMenu')
+
+     }
+ 
+       
+      
+    
    
   })
 
-  if(status==true){ 
-        alert('Produto adicionado ')
-  }else{
-      alert('Produto removido  ') 
-  } 
+   
     totalReal=total2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) 
     containerCart.innerHTML+=`<div style="   box-shadow: 0px -7px 12px #d9d9d9;position: fixed; bottom: 0; background: #ffffff; width: 100%; "><div style=" display: flex; justify-content: center; margin: 15px auto 0; color: #686868; ">Total da Compra: `+total2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</div ><button onclick="enviarPedido()" style="float: inherit;margin: 20px auto;border: 1px solid #46d995;bottom: 25px;width: 230px;height: 45px;background: #46d995;color: white;border-radius: 40px;display: flex;text-transform: uppercase;font-weight: 700;letter-spacing: 1px;align-items: center;justify-content: center;text-decoration: none;" onclick="removeProd(this)"><i style="margin-right: 5px;"  class="fa-brands fa-whatsapp"></i>        Enviar Pedido </button> </div>  `
     
 }
 
-enviarPedido=()=>{  
-    var cesta=document.querySelectorAll("div#CartMenu .itemProd")
-    
-    for (let index = 0; index < cesta.length; index++) {
-        const element = cesta[index];
-        name+=element.childNodes[1].innerHTML      
+ 
 
-        msg="("+name+")  " 
-    }
-    console.log(  msg  )
-    url="https://wa.me/+5512996048083?text=Olá meu nome é "+userName+", endereço ("+userEnd+"), Pedido: "+msg+"Total à pagar:"+totalReal;
-    location.href = url
-
+removeProd=( )=>{
+  console.log("cha")
+  containerCart.innerHTML=`    <button  style="background:transparent;z-index: 999;border: 1px solid #5a5a5a;left:5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;" onclick="toggle('CartMenu',this)">
+              x
+          </button>  `  
 }
 
-removeProd=(prod)=>{
- 
-    let key=prod.getAttribute('key')
-    listProd[key].quantidade--
-    Cart(false)
- }
-
-toggle=(id)=>{ 
-
+toggle=(id,element)=>{ 
   var thisID=document.getElementById(id) 
   var body = document.getElementsByTagName("body")[0]
  
@@ -863,6 +802,10 @@ toggle=(id)=>{
     } else { 
        
         thisID.setAttribute("view", "false") 
+
+  
+        element!=undefined ? removeProd() : console.log(element)
+        
     }  
 }
 
