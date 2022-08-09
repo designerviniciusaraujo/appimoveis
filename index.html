@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Good Vibes - Adega Delivery</title>
+    <title>Aplicativo de venda de imóveis</title>
     <link rel="shortcut icon" href="ico.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/swiper.css">
     <link rel="stylesheet" href="all.css">
@@ -163,6 +163,11 @@
         left: 0%;
          transition: .3s;
       }
+      #CartMenu .swiper {
+        width: 92%;
+        border-radius: 19px;
+          height: auto;
+      }
       #CartMenu[view="false"] {
         left: auto;
         transition: .3s;
@@ -181,10 +186,10 @@
       }
       span {
         font-weight: 900;
-        color: #46d995;
+        color: #4340e9;
     }
       nav,div#CartMenu{
-          background: #eee;
+          background:white;
           position: fixed;
           z-index: 99;
           left: 0;
@@ -285,7 +290,7 @@
       width: 60%;
       }
       span#qtd {
-          background: #46d995;
+          background: #4340e9;
           display: block;
           width: 20px;
           position: absolute;
@@ -390,7 +395,7 @@
     }
     span {
     font-weight: 900;
-    color: #46d995;
+    color: #4340e9;
     }
 
     /* swipr */
@@ -411,10 +416,15 @@
     bottom: 157px;
     left: 0;
     width: 100%;
+    }
+    #CartMenu .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0px;}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 157px;
+    left: 0;
+    width: 100%;
 }
-:root {
-    --swiper-theme-color: #4ce29e;
-}
+ 
 body[status="naologado"] #slider {
     display: none;
 }
@@ -465,9 +475,7 @@ ul#searchResult[view="show"] {
           <button  style="background:transparent;z-index: 999;border: 1px solid #5a5a5a;left:5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;" onclick="toggle('CartMenu',this)">
               x
           </button>  
-          <div class="msg">
-          Nenhum produto na Cesta 
-         </div>   
+            
       </div> 
     </header>
 
@@ -554,20 +562,7 @@ ul#searchResult[view="show"] {
 
 </body>
 <script src="assets/js/swiper.js"></script>
-<script>
-    var swiper = new Swiper(".containerMySwiper", {
-        spaceBetween: 0,
-        loop: true,
-        autoplay: {
-            delay: 3500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-        el: ".swiper-pagination", 
-      },
-   
-    });
-  </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
 <script src="all.js"></script>
 <script src="products.js"></script>
@@ -755,13 +750,37 @@ Cart = (key) =>{
     if(els.id ==key ){
       
       containerCart.innerHTML+=`  
+        <div class="swiper containerProduct"  >
+              <div class="swiper-wrapper">  
+                <div class="swiper-slide">
+                  <img src="`+els.slideImg1+`" alt="" >
+                </div>
+                <div class="swiper-slide">
+                  <img src="`+els.slideImg2+`" alt="" >
+                </div>  
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
             <div class="itemProd">
                 <div class="nameProd"> `+els.name+` </div> 
-                <p>`+els.description+`</p>
-             
+                <p>`+els.description+`</p>  
+                <p>`+els.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +`</p>  
             </div>  
             
         `;  
+
+        var swiper = new Swiper(".containerProduct", {
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+            el: ".swiper-pagination", 
+          },
+      
+        });
         toggle('CartMenu')
 
      }
@@ -774,7 +793,7 @@ Cart = (key) =>{
 
    
     totalReal=total2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) 
-    containerCart.innerHTML+=`<div style="   box-shadow: 0px -7px 12px #d9d9d9;position: fixed; bottom: 0; background: #ffffff; width: 100%; "><div style=" display: flex; justify-content: center; margin: 15px auto 0; color: #686868; ">Total da Compra: `+total2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</div ><button onclick="enviarPedido()" style="float: inherit;margin: 20px auto;border: 1px solid #46d995;bottom: 25px;width: 230px;height: 45px;background: #46d995;color: white;border-radius: 40px;display: flex;text-transform: uppercase;font-weight: 700;letter-spacing: 1px;align-items: center;justify-content: center;text-decoration: none;" onclick="removeProd(this)"><i style="margin-right: 5px;"  class="fa-brands fa-whatsapp"></i>        Enviar Pedido </button> </div>  `
+    containerCart.innerHTML+=`<div style="   box-shadow: 0px -7px 12px #d9d9d9;position: fixed; bottom: 0; background: #ffffff; width: 100%; "><div style=" display: flex; justify-content: center; margin: 15px auto 0; color: #686868; ">Total da Compra: `+total2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</div ><button onclick="enviarPedido()" style="float: inherit;margin: 20px auto;border: 1px solid #4340e9;bottom: 25px;width: 230px;height: 45px;background: #4340e9;color: white;border-radius: 40px;display: flex;text-transform: uppercase;font-weight: 700;letter-spacing: 1px;align-items: center;justify-content: center;text-decoration: none;" onclick="removeProd(this)"><i style="margin-right: 5px;"  class="fa-brands fa-whatsapp"></i>        Enviar Pedido </button> </div>  `
     
 }
 
@@ -782,7 +801,9 @@ Cart = (key) =>{
 
 removeProd=( )=>{
   console.log("cha")
-  containerCart.innerHTML=`    <button  style="background:transparent;z-index: 999;border: 1px solid #5a5a5a;left:5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;" onclick="toggle('CartMenu',this)">
+  containerCart.innerHTML=`  
+  <img style="width: 35px;border-radius: 12px;" src="back.png" alt="">
+    <button  style="background:transparent;z-index: 999;border: 1px solid #5a5a5a;left:5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;" onclick="toggle('CartMenu',this)">
               x
           </button>  `  
 }
@@ -811,23 +832,24 @@ toggle=(id,element)=>{
 
  
 </script>
+
 <!-- Swiper JS -->
 <script src="assets/js/swiper.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: "auto",
-        spaceBetween:10,
-        loop: true,
-        autoplay: {
-            delay: 1500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+  var swiper = new Swiper(".containerMySwiper", {
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+      },
+      pagination: {
+      el: ".swiper-pagination", 
+    },
+ 
   });
+
 </script>
 </html>
