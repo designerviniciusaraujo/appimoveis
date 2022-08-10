@@ -472,8 +472,11 @@ ul#searchResult[view="show"] {
          <img style="width: 35px;border-radius: 12px;" src="menu.png" alt="" />
         </button>   
         <div id="CartMenu" view="false"> 
-          <button  style="background:transparent;z-index: 999;border: 1px solid #5a5a5a;left:5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;" onclick="toggle('CartMenu',this)">
-              x
+        <img onclick="toggle('CartMenu',this)" style="width: 40px;border-radius: 12px;margin: 35px 10px 0;" src="back.png" alt="">
+
+          <button  style="background:transparent;z-index: 999;border: 0px ;right: 5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;float: right;margin: 30px;" onclick="toggle('CartMenu',this)">
+             <img src="close.png" alt=""  >
+             
           </button>  
             
       </div> 
@@ -802,10 +805,8 @@ Cart = (key) =>{
 removeProd=( )=>{
   console.log("cha")
   containerCart.innerHTML=`  
-  <img style="width: 35px;border-radius: 12px;" src="back.png" alt="">
-    <button  style="background:transparent;z-index: 999;border: 1px solid #5a5a5a;left:5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;" onclick="toggle('CartMenu',this)">
-              x
-          </button>  `  
+  <img onclick="toggle('CartMenu',this)" style="width: 40px;border-radius: 12px;margin: 35px 10px 0;" src="back.png" alt="">
+  <button  style="background:transparent;z-index: 999;border: 0px;right: 5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;float: right;margin: 30px;" onclick="toggle('CartMenu',this)"> <img src="close.png" alt=""  > </button> `  
 }
 
 toggle=(id,element)=>{ 
