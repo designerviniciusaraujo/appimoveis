@@ -22,8 +22,8 @@ div#mytabs .card {
 .card.products h4 {
     font-weight: 400;
     width: 180px;
-    font-size: 16px;
-    line-height: 1.1;
+    font-size: 15px;
+    line-height: 1.2;
     margin: 10px 0;
 }
  .card.products p{

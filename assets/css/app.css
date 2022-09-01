@@ -8,8 +8,7 @@ body{
 
   background-image: url('../img/elipse.png' );
   font-family: 'Poppins', sans-serif; 
-  overflow: hidden;
-
+  
   background-repeat: no-repeat;
   background-size: 47%;
   background-position: right top;
