@@ -1,0 +1,110 @@
+div#mytabs .card {
+    border: 1px solid #eee;
+    padding: 5px;
+    border-radius: 10px;
+}
+.card.products span {
+    position: absolute;
+    background: #4340e9;
+    margin: 10px;
+    font-size: 12px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.card.products {
+    text-align: left;
+    color: #626A89;
+}
+.card.products p,h4{
+   margin: 0;
+}
+.card.products h4 {
+    font-weight: 400;
+    width: 180px;
+    font-size: 16px;
+    line-height: 1.1;
+    margin: 10px 0;
+}
+ .card.products p{
+    font-size: 14px;
+    font-weight: 300;
+    margin: 10px auto;
+}
+.card.products .preco {
+    font-size: 14px;
+    margin: 5px auto;
+    color: #4340e9;
+}
+
+.card.products .destaques {
+    font-size: 13px;
+}
+.card.products .destaques div{
+    display: flex;
+    align-items: center;
+}
+
+.card.products  .card-body {
+    padding: 5px;
+}
+
+html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper-slide {
+        width: 60%; 
+         border-radius: 10px;
+      }
+
+      .swiper-slide:nth-child(2n) {
+        /* width: 60%; */
+      }
+
+      /* .swiper-slide:nth-child(3n) {
+        width: 40%;
+      } */
