@@ -4,7 +4,7 @@
 body{
   font-family: 'Poppins', sans-serif !important;
   margin: 0 auto !important;
-  padding: 15px  !important; 
+  
 
   background-image: url('../img/elipse.png' );
   font-family: 'Poppins', sans-serif; 
@@ -149,7 +149,7 @@ nav[view="true"]  {
   transition: .3s;
 
   top: inherit;
-  bottom: -100%
+  bottom: -120%
 
     }
 #CartMenu[view="true"] {
@@ -412,7 +412,7 @@ display: inherit;
 header{
 display: flex;
 align-items: center;
-margin: 15px 0;
+ padding: 10px 20px;
 justify-content: space-between;
 }
 header .welcome{
@@ -421,6 +421,7 @@ text-align: center;
 }
 header button {
 background:transparent;border:0;
+padding: 0;
 }
 label {
 position: relative;  
