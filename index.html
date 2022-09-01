@@ -171,7 +171,7 @@
  
 
     totalProducts=(listProd)=>{ 
-      console.log(listProd.length)
+      // console.log(listProd.length)
     }
     totalProducts(listProd)
 
@@ -274,12 +274,12 @@
      
     
       containerApp.childNodes[1].innerHTML+=` 
-          <button class="tablinks" onclick="openCity(event, '`+data[i].categoria+`')">`+data[i].categoria+`</button>
+          <button class="tablinks " onclick="openCity(event, '`+data[i].categoria+`')">`+data[i].categoria+`</button>
          
         `
       var subdata=data[i].itens
       for (var j = 0; j < subdata.length; j++) { 
-        console.log(subdata[j].name)
+        
          containerApp.innerHTML+=` 
           <div id="`+data[i].categoria+`" class="tabcontent">
            
@@ -294,19 +294,14 @@
                   <div class="card-body"> 
                     <p>`+subdata[j].nome+`</p>
                   <h4>`+subdata[j].localizacao+`</h4>
-                  <div class="destaques" style="display: flex; justify-content: space-between;">
+                  <div class="destaques" style=" justify-content: space-between;">
                   <div >
-                    <img  style="width: 25px !important;  float: left;      margin: 0px 5px 0 0;" src="assets/img/medindo.png" alt="">
+                    <img  style="width: 25px !important;  float: left;    " src="assets/img/medindo.png" alt="">
 
                     `+subdata[j].mts+`
                  
                   </div>
-                  <div>
-                  <img  style="width: 20px !important;  float: left;      margin: 0px 5px 0 0;" src="assets/img/cama.png" alt="">
-
-                    `+subdata[j].dorms+`
-                 
-                  </div>
+                  
                    </div> 
                   <div class="preco">`+subdata[j].tipo+` `+subdata[j].valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+` </div>
                   </div>  
@@ -337,6 +332,12 @@
  
     } 
 
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+     
+      console.log(tabcontent[0])
+      tabcontent[0].style.display = "block";
+    }
      
     
 }  

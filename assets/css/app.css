@@ -6,7 +6,7 @@ body{
   margin: 0 auto !important;
   padding: 15px  !important; 
 
-  background-image: url('elipse.png');
+  background-image: url('../img/elipse.png' );
   font-family: 'Poppins', sans-serif; 
   overflow: hidden;
 
