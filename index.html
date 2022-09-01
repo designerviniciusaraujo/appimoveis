@@ -32,13 +32,12 @@
          <img style="width: 35px;border-radius: 12px;" src="menu.png" alt="" />
         </button>   
         <div id="CartMenu" view="false"> 
-        <img onclick="toggle('CartMenu',this)" style="width: 40px;border-radius: 12px;margin: 35px 10px 0;" src="back.png" alt="">
-
+          <img onclick="toggle('CartMenu',this)" style="width: 40px;border-radius: 12px;margin: 35px 10px 0;" src="back.png" alt="">
           <button  style="background:transparent;z-index: 999;border: 0px ;right: 5px;margin: 15px;border-radius: 20px;height: 25px;width: 25px;color: #5a5a5a;float: right;margin: 30px;" onclick="toggle('CartMenu',this)">
              <img src="close.png" alt=""  >
-             
           </button>  
-            
+          <div id="menuContent">
+          </div> 
       </div> 
     </header>
 
@@ -130,8 +129,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
 <script src="all.js"></script>
-<script src="products.js"></script>
-<script src="teste.js"></script>
+<script src="products.js"></script> 
 
 <script>
 
@@ -229,16 +227,32 @@
         valor:250000,  
         localizacao:'Casa Ubatuba 70mts da Praia',
         imgPrincipal:'produtos/casa.png',
+        imgDetails:[{
+          one:'produtos/casa09.png',
+          two:'produtos/casa10.png',
+          three:'produtos/casa11.png',
+          four:'produtos/casa12.png',
+          five:'produtos/casa13.png',
+
+        }],
         description:' Terreno 20 de frente por 18 de fundo com alicerce pra levanta um sobrado, com 1 quarto e 1 banheiro dentro do terreno + 3 aptos do mesmo projeto da foto com garagem para 2 carros, 100 metros do mar. 400.000 praia da lagoinha',
       },{ 
         id:'1',
         tipo:'Venda', 
         nome:'Casa',  
-        mts:'20 mts',  
+        mts:'10x20 mts',  
         dormitorios:'2 dormitórios',  
         valor:150000,  
         localizacao:'Casa pré construída 150mts da Praia',
         imgPrincipal:'produtos/casa20.png',
+        imgDetails:[{
+          one:'produtos/vista14.png',
+          two:'produtos/vista11.png',
+          three:'produtos/vista12.png',
+          four:'produtos/vista13.png',
+          five:'produtos/vista10.png',
+
+        }],
         description:' Terreno 20 de frente por 18 de fundo com alicerce pra levanta um sobrado, com 1 quarto e 1 banheiro dentro do terreno + 3 aptos do mesmo projeto da foto com garagem para 2 carros, 100 metros do mar. 400.000 praia da lagoinha',
       },
         
@@ -247,17 +261,25 @@
         categoria:"Terrenos",
         
         "itens":[{ 
-            id:'3',
+            id:'2',
             tipo:'Venda', 
             nome:'Terreno', 
-            mts:'20 mts', 
+            mts:'20x18 mts', 
             dormitorios:'2 dormitórios',   
             valor:450000, 
             localizacao:'Casa/Terreno Ubatuba 70 metros da praia lagoinha',
             imgPrincipal:'produtos/terreno.png', 
+            imgDetails:[{
+              one:'produtos/lagoinha10.png',
+              two:'produtos/lagoinha11.png',
+              three:'produtos/lagoinha12.png',
+              four:'produtos/lagoinha13.png',
+              five:'produtos/lagoinha14.png',
+
+            }],
             description:'Casa 70 metros da praia somente o andar de baixo com entrada individual, 2 quartos, sala, cozinha com armário planejado, garagem 1 carro, churrasqueira, ducha, varanda em volta de toda casa. 230.000',   
           },{ 
-            id:'4',
+            id:'3',
             tipo:'Venda', 
             nome:'Terreno', 
             mts:'7x25 mts', 
@@ -265,6 +287,14 @@
             valor:90000, 
             localizacao:'Terreno 7x25mts murado e aterrado. ',
             imgPrincipal:'produtos/terreno7x25.png', 
+            imgDetails:[{
+              one:'produtos/murado10.png',
+              two:'produtos/murado11.png',
+              three:'produtos/murado12.png',
+              four:'produtos/murado13.png',
+              five:'produtos/murado14.png',
+
+            }],
             description:'Casa 70 metros da praia somente o andar de baixo com entrada individual, 2 quartos, sala, cozinha com armário planejado, garagem 1 carro, churrasqueira, ducha, varanda em volta de toda casa. 230.000',   
           }  
         ]   
@@ -287,7 +317,7 @@
             </div>
         </div> ` 
            
-      var subdata=data[i].itens
+        subdata=data[i].itens
       
       tabcontent = document.querySelectorAll(".tabcontent");
 
@@ -296,7 +326,7 @@
           if(el.id == data[i].categoria){ 
  
             document.getElementById(el.id).childNodes[1].childNodes[1].innerHTML+=` 
-                <div class="swiper-slide">
+                <div onclick="details(this)" key="`+dd.id+`" class="swiper-slide">
                  <div class="card products">
                   <span>`+dd.mts+`</span>
                   <img  src="`+dd.imgPrincipal+`" alt="">
@@ -317,6 +347,7 @@
                 </div> 
 
              `
+       
              
             } 
          })  
@@ -324,15 +355,109 @@
  
     } 
 
+    details=(prod)=>{
+      var key=prod.getAttribute('key')
+      var menuContent= document.getElementById('menuContent')
+      // menuContent.innerHTML=``
+      data.forEach(element => { 
+          element.itens.forEach(subelement => {
+            if(key==subelement.id){
+
+              console.log(subelement.imgDetails)
+
+              subelement.imgDetails.forEach(elementimg => { 
+                menuContent.innerHTML=`
+              <div class="card products">
+                  <span>`+subelement.mts+`</span>
+
+                  <div class="swiper ">
+                      <div class="swiper-wrapper"> 
+                        <div  class="swiper-slide">
+                          <img  src="`+elementimg.one+`" alt="">
+
+                        </div>
+                        <div  class="swiper-slide">
+                          <img  src="`+elementimg.two+`" alt="">
+
+                        </div>
+                        <div  class="swiper-slide">
+                          <img  src="`+elementimg.three+`" alt="">
+
+                        </div>
+                        <div  class="swiper-slide">
+                          <img  src="`+elementimg.four+`" alt="">
+
+                        </div>
+                      </div>
+                </div>
+                    <div class="card-body"> 
+                      <p>`+subelement.nome+`</p>
+                      <h4>`+subelement.localizacao+`</h4>
+                      <div class="destaques" style=" justify-content: space-between;">
+                        <div>
+                          <img  style="width: 25px !important;  float: left;    " src="assets/img/medindo.png" alt="">
+
+                          `+subelement.mts+`
+                      
+                        </div> 
+                      </div> 
+                      <p>`+subelement.description+`</p>
+
+                      <div class="preco">`+subelement.tipo+` `+subelement.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+` </div>
+                      </div>  
+                    </div>
+              `
+              })
+              
+            }
+            
+          });
+      });
+      var swiper = new Swiper(".swiper", {
+      slidesPerView: "auto",
+      spaceBetween:10,
+      loop: true,
+      autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+  });
+      return toggle("CartMenu")
+
+    }
+
+
     tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[0].style.display = "block";
-     ;
-  }
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[0].style.display = "block";
+      ;
+    }
+    var swiper = new Swiper(".swiper", {
+      slidesPerView: "auto",
+      spaceBetween:10,
+      loop: true,
+      autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+  });
+  
 
     
 }  
 initApp()
+
+ 
+
+ 
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -346,21 +471,28 @@ function openCity(evt, cityName) {
   }
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
-}
-var swiper = new Swiper(".swiper", {
-            slidesPerView: "auto",
-            spaceBetween:10,
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-        });
  
+  
+}
+  
+        toggle=(id)=>{ 
+   
+   var thisID=document.getElementById(id) 
+   var body = document.getElementsByTagName("body")[0]
+  
+ 
+     if(thisID.getAttribute("view")=="false") {
+        
+       if(thisID.getAttribute("id")=="CartMenu"){
+         
+       }
+      
+       thisID.setAttribute("view", "true") 
+     } else { 
+        
+         thisID.setAttribute("view", "false") 
+     }  
+ }
 </script>
 
 <!-- Swiper JS -->

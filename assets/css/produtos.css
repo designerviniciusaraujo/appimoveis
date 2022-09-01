@@ -11,7 +11,9 @@ div#mytabs .card {
     color: white;
     padding: 5px 10px;
     border-radius: 10px;
+    z-index: 999;
 }
+
 .card.products {
     text-align: left;
     color: #626A89;
@@ -48,7 +50,9 @@ div#mytabs .card {
 .card.products  .card-body {
     padding: 5px;
 }
-
+div#CartMenu .card-body {
+  padding: 20px;
+}
 html,
       body {
         position: relative;
@@ -95,7 +99,7 @@ html,
         object-fit: cover;
       }
 
-      .swiper-slide {
+      .tabcontent .swiper-slide {
         width: 70%; 
          border-radius: 10px;
       }

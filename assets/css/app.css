@@ -177,7 +177,7 @@ nav,div#CartMenu{
     z-index: 990;
 }
 div#CartMenu{
-  height: 82vh !important;
+  height: 100vh !important;
 
 }
 nav ul li {
