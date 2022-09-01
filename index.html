@@ -277,7 +277,7 @@
               five:'produtos/lagoinha14.png',
 
             }],
-            description:'Casa 70 metros da praia somente o andar de baixo com entrada individual, 2 quartos, sala, cozinha com armário planejado, garagem 1 carro, churrasqueira, ducha, varanda em volta de toda casa. 230.000',   
+            description:'Casa 70 metros da praia somente o andar de baixo com entrada individual, 2 quartos, sala, cozinha com armário planejado, garagem 1 carro, churrasqueira, ducha, varanda em volta de toda casa.',   
           },{ 
             id:'3',
             tipo:'Venda', 
@@ -367,27 +367,27 @@
 
               subelement.imgDetails.forEach(elementimg => { 
                 menuContent.innerHTML=`
-              <div class="card products">
-                  <span>`+subelement.mts+`</span>
+                <div class="card products">
+                   <span>`+subelement.mts+`</span>
 
-                  <div class="swiper ">
-                      <div class="swiper-wrapper"> 
-                        <div  class="swiper-slide">
-                          <img  src="`+elementimg.one+`" alt="">
+                    <div class="swiper ">
+                        <div class="swiper-wrapper"> 
+                          <div  class="swiper-slide">
+                            <img  src="`+elementimg.one+`" alt="">
 
-                        </div>
-                        <div  class="swiper-slide">
-                          <img  src="`+elementimg.two+`" alt="">
+                          </div>
+                          <div  class="swiper-slide">
+                            <img  src="`+elementimg.two+`" alt="">
 
-                        </div>
-                        <div  class="swiper-slide">
-                          <img  src="`+elementimg.three+`" alt="">
+                          </div>
+                          <div  class="swiper-slide">
+                            <img  src="`+elementimg.three+`" alt="">
 
-                        </div>
-                        <div  class="swiper-slide">
-                          <img  src="`+elementimg.four+`" alt="">
+                          </div>
+                          <div  class="swiper-slide">
+                            <img  src="`+elementimg.four+`" alt="">
 
-                        </div>
+                          </div>
                       </div>
                 </div>
                     <div class="card-body"> 
@@ -406,6 +406,11 @@
                       <div class="preco">`+subelement.tipo+` `+subelement.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+` </div>
                       </div>  
                     </div>
+
+                    <a class="getWhats" href="https://wa.me/+5512996048083?text=Olá me interessei pelo imóvel `+subelement.localizacao+`
+                          `+subelement.mts+` `+subelement.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`">
+                        Falar com proprietario  <i class="fa-brands fa-whatsapp"></i>   
+                    </a>
               `
               })
               
@@ -413,6 +418,7 @@
             
           });
       });
+      slid()
     
       return toggle("CartMenu")
 
@@ -425,6 +431,7 @@
       ;
     }
    
+    slid()
 
     
 }  
@@ -447,6 +454,7 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
  
+  slid()
   
 }
   
@@ -469,6 +477,7 @@ function openCity(evt, cityName) {
      }  
  }
 
+ function slid(){ 
  var swiper = new Swiper(".swiper", {
       slidesPerView: "auto",
       spaceBetween:10,
@@ -482,6 +491,8 @@ function openCity(evt, cityName) {
         clickable: true,
       },
   });
+
+}
 </script>
 
 <!-- Swiper JS -->
